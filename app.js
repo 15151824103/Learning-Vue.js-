@@ -8,20 +8,32 @@ new Vue({
 	el : "#vue-app",
 
 	data : {
-		name : "",
-		age : ""
+		a : 0,
+		b : 0,
+		age : 20
 	},
 
 	methods : {
-		/*  方法一
-			inputName : function(){
-				this.name = this.$refs.name.value;
-			},
+		/*adda : function(){
+			console.log("a");
+			return this.a + this.age;
+		},
 
-			inputAge : function(){
-				this.age = this.$refs.age.value;
-			}
-		*/
+		addb : function(){
+			console.log("b");
+			return this.b + this.age;
+		}*/
 	},
 
+	computed : {
+		adda : function(){
+			console.log("a");
+			return this.a + this.age;
+		},
+
+		addb : function(){
+			console.log("b");
+			return this.b + this.age;
+		}
+	}
 });
