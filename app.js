@@ -8,26 +8,17 @@ new Vue({
 	el : "#vue-app",
 
 	data : {
-		age : 22,
-		x : 0,
-		y : 0
+		
 	},
 
 	methods : {
-		add : function(){
-			this.age ++;
+		inputName : function(){
+			console.log("正在输入姓名");
 		},
 
-		getXY : function(event){
-			// console.log(event);
-			this.x = event.offsetX;
-			this.y = event.offsetY;
-		},
-
-		/*	JS实现 停止事件冒泡
-			stop : function(event){
-			event.stopPropagation();
-		}*/
+		inputAge : function(){
+			console.log("正在输入年龄");
+		}
 	},
 
 });

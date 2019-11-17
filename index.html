@@ -9,29 +9,12 @@
 <body>
 
 	<div id="vue-app">
-		<h1>Events</h1>
-		<!-- 
-			不推荐使用这个方式直接操作属性,推荐使用方法,在方法中修改属性
-			<button v-on:click="age++">加一岁</button>
-		 -->
-		 <!-- v-on: 与 @ 效果是一样的 -->
-		 <button v-on:click="add">加一岁</button> <!-- 单击事件 -->
-		 <button @dblclick="add">加一岁</button> <!-- 双击事件 -->
-		<p>{{age}}</p>
-
-		<div id="convet" v-on:mousemove="getXY">
-			{{x}},{{y}} -- 
-			<!-- 
-				JS的方式实现 stop停止时间冒泡：就是停止事件
-				<span id="stop" v-on:mousemove="stop">Stop</span>
-			 -->
-
-			 <!-- Vue框架实现 停止时间冒泡 -->
-			<span id="stop" v-on:mousemove.stop>Stop</span>
-
-			<!-- once方法只实现一次 -->
-			<button v-on:click.once="add">加一岁</button>
-		</div>
+		<h1>键盘 Events</h1>
+		<label>姓名:</label>
+		<input type="text" name="" v-on:keyup.enter="inputName">
+		<label>年龄:</label>
+		<!-- 事件修饰符还支持链式的写法,这里是组合了两个键 -->
+		<input type="text" name="" v-on:keyup.alt.enter="inputAge">
 	</div>
 	
 
