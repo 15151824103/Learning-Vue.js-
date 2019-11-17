@@ -5,18 +5,29 @@
  *methods:用于存储各种方法
  */ 
 new Vue({
-	el:"#vue-app",
+	el : "#vue-app",
 
-	data:{
-		name:"贺涛",
-		website:"泷泽萝拉",
-		websiteTag:"<a href='https://www.baidu.com'>百度</a>"
+	data : {
+		age : 22,
+		x : 0,
+		y : 0
 	},
 
-	methods:{
-		print:function(){
-			return "你好," + this.name;
-		}
+	methods : {
+		add : function(){
+			this.age ++;
+		},
+
+		getXY : function(event){
+			// console.log(event);
+			this.x = event.offsetX;
+			this.y = event.offsetY;
+		},
+
+		/*	JS实现 停止事件冒泡
+			stop : function(event){
+			event.stopPropagation();
+		}*/
 	},
 
 });

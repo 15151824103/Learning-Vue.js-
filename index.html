@@ -3,20 +3,39 @@
 <head>
 	<meta charset="utf-8">
 	<title>Vue.js</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https:/unpkg.com/vue"></script>
 </head>
 <body>
 
 	<div id="vue-app">
-		<h1>{{name}}</h1>
-		{{print()}}
+		<h1>Events</h1>
+		<!-- 
+			不推荐使用这个方式直接操作属性,推荐使用方法,在方法中修改属性
+			<button v-on:click="age++">加一岁</button>
+		 -->
+		 <!-- v-on: 与 @ 效果是一样的 -->
+		 <button v-on:click="add">加一岁</button> <!-- 单击事件 -->
+		 <button @dblclick="add">加一岁</button> <!-- 双击事件 -->
+		<p>{{age}}</p>
 
-		<input type="text" v-bind:value="name">
-		<p v-html="websiteTag"></p>
+		<div id="convet" v-on:mousemove="getXY">
+			{{x}},{{y}} -- 
+			<!-- 
+				JS的方式实现 stop停止时间冒泡：就是停止事件
+				<span id="stop" v-on:mousemove="stop">Stop</span>
+			 -->
+
+			 <!-- Vue框架实现 停止时间冒泡 -->
+			<span id="stop" v-on:mousemove.stop>Stop</span>
+
+			<!-- once方法只实现一次 -->
+			<button v-on:click.once="add">加一岁</button>
+		</div>
 	</div>
+	
 
-	<!-- 导入js,css等样式 -->
-	<script src="https:/unpkg.com/vue"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- 导入Vue.js样式 -->
 	<script src="app.js"></script>
 </body>
 </html>
