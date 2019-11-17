@@ -9,12 +9,23 @@
 <body>
 
 	<div id="vue-app">
-		<h1>键盘 Events</h1>
+		<h1>Vue的 数据双向绑定</h1>
 		<label>姓名:</label>
-		<input type="text" name="" v-on:keyup.enter="inputName">
+		<!-- 双向绑定实现方法-1
+			ref:被他标记的标签,在Vue对象里可以通过this.$refs.name.value操作获取其值
+			<input ref="name" type="text" v-on:keyup="inputName"> 
+			<span>{{name}}</span>
+			<label>年龄:</label>
+			<input ref="age" type="text" v-on:keyup="inputAge"> 
+			<span>{{age}}</span>
+		 -->
+
+		<!-- 双向绑定实现方法-2 -->
+		<input ref="name" type="text" v-model="name"> 
+		<span>{{name}}</span>
 		<label>年龄:</label>
-		<!-- 事件修饰符还支持链式的写法,这里是组合了两个键 -->
-		<input type="text" name="" v-on:keyup.alt.enter="inputAge">
+		<input ref="age" type="text" v-model="age"> 
+		<span>{{age}}</span>
 	</div>
 	
 

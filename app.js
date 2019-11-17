@@ -8,17 +8,20 @@ new Vue({
 	el : "#vue-app",
 
 	data : {
-		
+		name : "",
+		age : ""
 	},
 
 	methods : {
-		inputName : function(){
-			console.log("正在输入姓名");
-		},
+		/*  方法一
+			inputName : function(){
+				this.name = this.$refs.name.value;
+			},
 
-		inputAge : function(){
-			console.log("正在输入年龄");
-		}
+			inputAge : function(){
+				this.age = this.$refs.age.value;
+			}
+		*/
 	},
 
 });
