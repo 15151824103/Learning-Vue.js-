@@ -8,32 +8,20 @@ new Vue({
 	el : "#vue-app",
 
 	data : {
-		a : 0,
-		b : 0,
-		age : 20
+		changeColor : false,
+		changeLength : false
 	},
 
 	methods : {
-		/*adda : function(){
-			console.log("a");
-			return this.a + this.age;
-		},
-
-		addb : function(){
-			console.log("b");
-			return this.b + this.age;
-		}*/
+		
 	},
 
 	computed : {
-		adda : function(){
-			console.log("a");
-			return this.a + this.age;
-		},
-
-		addb : function(){
-			console.log("b");
-			return this.b + this.age;
+		Color : function(){
+			return {
+				changeColor : this.changeColor,
+				changeLength : this.changeLength
+			}
 		}
 	}
 });

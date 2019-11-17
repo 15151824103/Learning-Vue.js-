@@ -9,20 +9,22 @@
 <body>
 
 	<div id="vue-app">
-		<h1>Computed 计算属性</h1>
-		<button v-on:click="a++">a + 1</button>
-		<button v-on:click="b++">b + 1</button>
-		<p>a - {{a}}</p>
-		<p>b - {{b}}</p>
-		<!-- 
-			methods与computed计算属性区别！
-			methods:页面在运行是都会渲染一遍里面的方法,比computed更消耗内存
-			computed:只会渲染执行当前事件调用的方法
-			  注意！: 因为只有methods里面存放的是方法,所以调用computed里面
-			          的方法是不可以加上 ().
-		 -->
-		<p>a + age = {{adda}}</p>
-		<p>b + age = {{addb}}</p>
+		<h1>动态 CSS Class</h1>
+		<h2>示例 1</h2>
+		<!--
+			这里的v-on:click: 是给此标签一个点击事件,可以在事件里直接修改Vue里的属性
+			这里的v-bind:class: 是给此标签一个class,可以是一个对象
+			<div v-on:click="changeColor=!changeColor" v-bind:class="{changeColor:changeColor}">
+				<span>Color</span>
+			</div>
+		-->
+
+		<h2>示例 2</h2>
+		<button v-on:click="changeColor = !changeColor">color</button>
+		<button v-on:click="changeLength = !changeLength">length</button>
+		<div v-bind:class="Color">
+			<span>Color</span>
+		</div>
 	</div>
 	
 
