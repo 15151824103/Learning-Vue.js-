@@ -9,25 +9,21 @@
 <body>
 
 	<div id="vue-app">
-		<h1>动态 CSS Class</h1>
-		<h2>示例 1</h2>
-		<!--
-			这里的v-on:click: 是给此标签一个点击事件,可以在事件里直接修改Vue里的属性
-			这里的v-bind:class: 是给此标签一个class,可以是一个对象
-			<div v-on:click="changeColor=!changeColor" v-bind:class="{changeColor:changeColor}">
-				<span>Color</span>
-			</div>
-		-->
+		<h1>v-if 条件</h1>
 
-		<h2>示例 2</h2>
-		<button v-on:click="changeColor = !changeColor">color</button>
-		<button v-on:click="changeLength = !changeLength">length</button>
-		<div v-bind:class="Color">
-			<span>Color</span>
-		</div>
+		<!--
+			v-if: 满足条件就有此标签,不满足Dom里面就没有此标签
+			v-else-if: 加上这个就只能满足一个条件,满足v-if,就不走v-else-if,反之也是一样
+			v-show: 与v-if区别在于,这个不管满不满足条件Dom里面都有此标签
+		-->
+		<button v-on:click="error = !error">按钮 v-if</button>
+		<p v-if="error">400</p>
+		<p v-else-if>200</p>
+
+		<button v-on:click="error = !error">按钮 v-show</button>
+		<p v-show="error">400</p>
 	</div>
 	
-
 	<!-- 导入Vue.js样式 -->
 	<script src="app.js"></script>
 </body>
