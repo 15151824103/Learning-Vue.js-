@@ -9,19 +9,29 @@
 <body>
 
 	<div id="vue-app">
-		<h1>v-if 条件</h1>
+		<h1>v-for 循环</h1>
 
 		<!--
-			v-if: 满足条件就有此标签,不满足Dom里面就没有此标签
-			v-else-if: 加上这个就只能满足一个条件,满足v-if,就不走v-else-if,反之也是一样
-			v-show: 与v-if区别在于,这个不管满不满足条件Dom里面都有此标签
+			template: 此标签循环时不会循环多个此标签,以避免冗余.
 		-->
-		<button v-on:click="error = !error">按钮 v-if</button>
-		<p v-if="error">400</p>
-		<p v-else-if>200</p>
+		<ul>
+			<li v-for="user in users">
+				{{user.name}}
+			</li>
+		</ul>
 
-		<button v-on:click="error = !error">按钮 v-show</button>
-		<p v-show="error">400</p>
+		<!-- 这里会循环出多个-div 而-template标签不会
+			<div v-for="user in users">
+				<h1>{{user.name}}</h1>
+				<p>{{user.age}}</p>
+			</div>
+		-->
+
+
+		<template v-for="user in users">
+			<h1>{{user.name}}</h1>
+			<p>{{user.age}}</p>
+		</template>
 	</div>
 	
 	<!-- 导入Vue.js样式 -->

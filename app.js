@@ -8,7 +8,20 @@ new Vue({
 	el : "#vue-app",
 
 	data : {
-		error : false
+		users : [
+			{
+				name : "强欢喜",
+				age : 99
+			},
+			{
+				name : "老鸨",
+				age : 44
+			},
+			{
+				name : "老周",
+				age : 66
+			}
+		]
 	},
 
 	methods : {
