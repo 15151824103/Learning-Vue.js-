@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Vue.js</title>
+</head>
+<body>
+
+	<div id="vue-app">
+		<h1>{{name}}</h1>
+		{{print()}}
+
+		<input type="text" v-bind:value="name">
+		<p v-html="websiteTag"></p>
+	</div>
+
+	<!-- 导入js,css等样式 -->
+	<script src="https:/unpkg.com/vue"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="app.js"></script>
+</body>
+</html>
